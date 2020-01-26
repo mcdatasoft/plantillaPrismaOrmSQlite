@@ -1,3 +1,4 @@
+"use strict";
 /*
 console.log("Try npm run check/fix!");
 
@@ -21,7 +22,7 @@ export function doSomeStuff(
   console.log(andThat);
 }
 */
-
+Object.defineProperty(exports, "__esModule", { value: true });
 /*
 class Student {
   fullName: string;
@@ -43,18 +44,16 @@ let user = new Student("Catherine", "H.", "de Cuadros");
 
 console.log(greeter(user));
 */
-
-import { PrismaClient } from '@prisma/client'
-const prisma = new PrismaClient()
-  async function main() {
-  
+const client_1 = require("@prisma/client");
+const prisma = new client_1.PrismaClient();
+async function main() {
     const users = await prisma.clientes.findMany({
         select: {
             nombre: true,
             apellido: true
-          }
-    })
-    console.log(users)
-  }
-  
-  main()
+        }
+    });
+    console.log(users);
+}
+main();
+//# sourceMappingURL=index.js.map
